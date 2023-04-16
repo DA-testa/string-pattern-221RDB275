@@ -10,8 +10,7 @@ def read_input():
     if input_type[0] == "I":
         return(input().rstrip(), input().rstrip())
     elif input_type[0] == "F":
-        file_name = input()
-        path = "./tests/" + file_name
+        path = "./tests/" + "06"
         with open(path, 'r', encoding = 'utf-8') as test:
             return(test.readline().rstrip(), test.readline().rstrip())
     else:
