@@ -55,10 +55,10 @@ def get_occurrences(pattern, text):
         if pattern_hash == text_hash:
             if text[i:i+pattern_len] == pattern:
                 occ.append(i)
-        if i < text_len - pattern_len:
-            text_hash = (B * (text_hash - ord(text[i]) * multiplier) + ord(text[i + pattern_len])) % Q
+        if i <= text_len - pattern_len:
+            text_hash = (B * (text_hash + ord(text[i]) * multiplier) + ord(text[i + pattern_len])) % Q
             text_hash = (text_hash + Q) % Q
-    return[0]
+    return occ
 
 
 # this part launches the functions
