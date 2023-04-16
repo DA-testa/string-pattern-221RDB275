@@ -1,7 +1,7 @@
 # python3
+
 B = 13
 Q = 256
-
 
 def read_input():
     # this function needs to aquire input both from keyboard and file
@@ -33,9 +33,9 @@ def print_occurrences(output):
 
 def get_hash(pattern: str) -> int:
     global B, Q
-    m = len(pattern)
+    pattern_len_inHash = len(pattern)
     result = 0
-    for i in range(m):
+    for i in range(pattern_len_inHash):
         result = (B * result + ord(pattern[i])) % Q
     return result
 
